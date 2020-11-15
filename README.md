@@ -5,6 +5,6 @@ HALLO!
 - Primarily for TeX and Python
 
 Files:
--init.vim
--(empty) Ultisnips personal snippets (apart from horetz snippets)
--(empty) coc.vim in plug-config 
+- init.vim
+- (empty) Ultisnips personal snippets (apart from horetz snippets)
+- (empty) coc.vim in plug-config 
