@@ -1,0 +1,50 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_OUTPUT_MODE	u-ctags	/u-ctags or e-ctags/
+!_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
+!_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
+!_TAG_PROGRAM_URL	https://ctags.io/	/official site/
+!_TAG_PROGRAM_VERSION	0.0.0	//
+<C-l>	init.vim	/^inoremap <C-l> <c-g>u<Esc>[s1z=`]a<c-g>u$/;"	m
+<C-n>	init.vim	/^map <silent><C-n> :NERDTreeToggle<CR>$/;"	m
+<C-p>	init.vim	/^nnoremap <silent> <C-p> :Files<CR>$/;"	m
+<Leader>+	init.vim	/^nnoremap <silent> <Leader>+ :vertical resize +5<CR>$/;"	m
+<Leader>-	init.vim	/^nnoremap <silent> <Leader>- :vertical resize -5<CR>$/;"	m
+<Leader>F	init.vim	/^nnoremap <silent> <Leader>F :vertical resize 75<CR>$/;"	m
+<Leader>vr	init.vim	/^nnoremap <Leader>vr :vertical resize $/;"	m
+<c-space>	init.vim	/^inoremap <silent><expr> <c-space> coc#refresh()$/;"	m
+<leader><BS>	init.vim	/^nnoremap <leader><BS> :nohl<CR>$/;"	m
+<leader>ale	init.vim	/^nnoremap <leader>ale :ALEToggle<CR>$/;"	m
+<leader>h	init.vim	/^nnoremap <leader>h :wincmd h<CR>$/;"	m
+<leader>j	init.vim	/^nnoremap <leader>j :wincmd j<CR>$/;"	m
+<leader>k	init.vim	/^nnoremap <leader>k :wincmd k<CR>$/;"	m
+<leader>l	init.vim	/^nnoremap <leader>l :wincmd l<CR>$/;"	m
+<leader>ni	init.vim	/^nnoremap <leader>ni :setl noai nocin nosi inde=<CR>$/;"	m
+<leader>p0	init.vim	/^nnoremap <leader>p0 :set tw=0<CR>$/;"	m
+<leader>pd	init.vim	/^nnoremap <leader>pd :wincmd s<CR>$/;"	m
+<leader>pp	init.vim	/^nnoremap <leader>pp :wincmd v<CR>$/;"	m
+<leader>pv	init.vim	/^nnoremap <leader>pv :wincmd v<bar>:Ex<bar>:vertical resize 30<CR>$/;"	m
+<leader>so	init.vim	/^nnoremap <leader>so :source %<CR>$/;"	m
+<leader>tw	init.vim	/^nnoremap <leader>tw :set tw=79<CR>$/;"	m
+<leader>u	init.vim	/^nnoremap <leader>u :UndotreeShow<CR>$/;"	m
+<leader>ws	init.vim	/^nnoremap <leader>ws :%s\/\\s\\+$\/\/e<CR>$/;"	m
+<tab>	init.vim	/^inoremap <silent><expr> <tab>$/;"	m
+Comment	init.vim	/^function! Comment()$/;"	f
+Uncomment	init.vim	/^function! Uncomment()$/;"	f
+g:UltiSnipsExpandTrigger	init.vim	/^let g:UltiSnipsExpandTrigger = '<C-u>'$/;"	v
+g:UltiSnipsJumpBackwardTrigger	init.vim	/^let g:UltiSnipsJumpBackwardTrigger = '<C-U>'$/;"	v
+g:UltiSnipsJumpForwardTrigger	init.vim	/^let g:UltiSnipsJumpForwardTrigger = '<C-t>'$/;"	v
+g:ale_linters	init.vim	/^let g:ale_linters = {'tex': ['lacheck'], 'python': ['pylint']}$/;"	v
+g:clipboard	init.vim	/^let g:clipboard = {$/;"	v
+g:gruvbox_contrast_dark	init.vim	/^let g:gruvbox_contrast_dark='hard'$/;"	v
+g:netrw_banner	init.vim	/^let g:netrw_banner=0$/;"	v
+g:seoul256_b	init.vim	/^let g:seoul256_b=252$/;"	v
+g:tex_conceal	init.vim	/^let g:tex_conceal='abdmg'$/;"	v
+g:tex_flavor	init.vim	/^let g:tex_flavor = 'latex'$/;"	v
+g:vimtex_quickfix_mode	init.vim	/^let g:vimtex_quickfix_mode=0$/;"	v
+gC	init.vim	/^map gC :call Uncomment()<CR>$/;"	m
+gc	init.vim	/^map gc :call Comment()<CR>$/;"	m
+jj	init.vim	/^imap jj <ESC>$/;"	m
+loaded_netrwPlugin	init.vim	/^let loaded_netrwPlugin = 0$/;"	v
+mapleader	init.vim	/^let mapleader= " " $/;"	v
+s:check_back_space	init.vim	/^function! s:check_back_space() abort$/;"	f

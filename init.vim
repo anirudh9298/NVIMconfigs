@@ -17,14 +17,23 @@ set undofile
 set incsearch
 set tw=79
 set fo-=l 
+highlight Cursor guifg=white guibg=black
 set colorcolumn=80
-
+set guifont=Hack\ 10
 let loaded_netrwPlugin = 0
 let g:netrw_banner=0
+
 call plug#begin('~/.vim/plugged')
 
-Plug 'preservim/nerdtree' "file Explorer to escape netrw
 Plug 'morhetz/gruvbox'   "Best color scheme for vim
+Plug 'sainnhe/gruvbox-material' "Even bester color scheme for vim gruvbox-mod.
+Plug 'junegunn/seoul256.vim' "A try at a different color scheme
+Plug 'gilgigilgil/anderson.vim' "slightly different scheme
+Plug 'sainnhe/edge' "Another try at colors
+Plug 'NLKNguyen/papercolor-theme' "Maybe for latex
+Plug 'wadackel/vim-dogrun' "Just for the trys
+
+Plug 'preservim/nerdtree' "file Explorer to escape netrw
 Plug 'neoclide/coc.nvim', {'branch': 'release'} "Autocompleter and others. Requires Jedi, Yarn. 
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } } "Fuzzy finder. Requires further testing.
 Plug 'junegunn/fzf.vim'
@@ -37,16 +46,37 @@ Plug 'jremmen/vim-ripgrep' "fast search
 Plug 'SirVer/ultisnips' "Snippet tools for commands
 Plug 'lervag/vimtex' "for tex compiling
 Plug 'ludovicchabant/vim-gutentags' "Tag manager
-Plug 'jiangmiao/auto-pairs' "Bracket pairing
+"Plug 'jiangmiao/auto-pairs' "Bracket pairing
 Plug 'honza/vim-snippets' "Ultisnippets  
 
 call plug#end()
 
 "COLORSCHEME
+set background=dark "light
+"colo seoul256-light
 let g:gruvbox_contrast_dark='hard'
-colorscheme gruvbox
-set background=dark
+colo gruvbox
+let g:seoul256_b=252
+"colorscheme gruvbox
+
+autocmd BufEnter *.tex set background=light
+autocmd BufEnter *.tex colorscheme seoul256-light 
+autocmd BufEnter *.bib set background=light
+autocmd BufEnter *.bib colorscheme seoul256-light "gruvbox 
+""let g:edge_style = 'aura'
+"colo edge
+
+hi clear SpellBad
+hi SpellBad cterm=underline
+"colo gruvbox
+"set background=dark
+"let g:gruvbox_material_background='hard'
+"let g:gruvbox_material_disable_italic_comment = 1
+"let g:gruvbox_material_enable_bold = 1
+"colorscheme gruvbox-material
+
 "let g:airline_theme='base16'
+"
 " VIMTEX
 let g:tex_flavor = 'latex'
 let g:vimtex_quickfix_mode=0
@@ -55,6 +85,7 @@ let g:tex_conceal='abdmg'
 
 "UTILS
 let mapleader= " " 
+imap jj <ESC>
 nnoremap <leader>so :source %<CR>
 nnoremap <leader><BS> :nohl<CR>
 
@@ -63,11 +94,14 @@ nnoremap <leader>j :wincmd j<CR>
 nnoremap <leader>k :wincmd k<CR>
 nnoremap <leader>l :wincmd l<CR>
 nnoremap <leader>pp :wincmd v<CR>
-nnoremap <leader>pv :wincmd v<bar> :Ex <bar> :vertical resize 30<CR>
+nnoremap <leader>pd :wincmd s<CR>
+nnoremap <leader>pv :wincmd v<bar>:Ex<bar>:vertical resize 30<CR>
 
 nnoremap <silent> <Leader>+ :vertical resize +5<CR>
 nnoremap <silent> <Leader>- :vertical resize -5<CR>
 nnoremap <silent> <Leader>F :vertical resize 75<CR>
+nnoremap <Leader>vr :vertical resize 
+
 
 nnoremap <leader>p0 :set tw=0<CR>
 nnoremap <leader>tw :set tw=79<CR>
@@ -91,19 +125,23 @@ inoremap <silent><expr> <tab>
 inoremap <silent><expr> <c-space> coc#refresh()
 
 "NERDTREETOGGLE
-map <C-n> :NERDTreeToggle<CR>
+map <silent><C-n> :NERDTreeToggle<CR>
 
 "CODE FOLDING
 "SPELLCHECK
-setlocal spell
-set spelllang=en_gb
+"setlocal spell
+"set spelllang=en_gb
 inoremap <C-l> <c-g>u<Esc>[s1z=`]a<c-g>u
 
+"REMOVE SMART INDENT
+nnoremap <leader>ni :setl noai nocin nosi inde=<CR>
+
 "ALE LINTERS
-let g:ale_linters = {'tex': ['lacheck']}
+let g:ale_linters = {'tex': ['lacheck'], 'python': ['pylint']}
+nnoremap <leader>ale :ALEToggle<CR>
 "ULTISNIPS
 let g:UltiSnipsExpandTrigger = '<C-u>'
-let g:UltiSnipsJumpForwardTrigger = '<C-u>'
+let g:UltiSnipsJumpForwardTrigger = '<C-t>'
 let g:UltiSnipsJumpBackwardTrigger = '<C-U>'
 
 "CLIPBOARD
